@@ -1,6 +1,6 @@
 import { ComponentProps } from 'react'
 import styled from 'styled-components'
-import { defaultTheme } from '../../styles/themes/default'
+import { defaultTheme } from '../../../../styles/themes/default'
 
 export const HomeIntroContainer = styled.section`
   display: flex;
