@@ -18,6 +18,7 @@ export const QuantityInputContainer = styled.div`
     border: 0;
     background-color: transparent;
     cursor: pointer;
+    display: flex;
   }
 
   svg {
