@@ -12,7 +12,7 @@ export const QuantityInputContainer = styled.div`
   border-radius: 6px;
 
   height: 100%;
-  padding: 9px;
+  padding: 0.5875rem;
 
   button {
     border: 0;
