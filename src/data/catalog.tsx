@@ -20,6 +20,7 @@ export type CatalogItemType = {
   tags: string[]
   price: number
   imgUrl: string
+  quantity: number
 }
 
 export const catalogData: CatalogItemType[] = [
@@ -30,6 +31,7 @@ export const catalogData: CatalogItemType[] = [
     tags: ['Tradicional'],
     price: 9.9,
     imgUrl: expresso,
+    quantity: 0,
   },
   {
     id: 2,
@@ -38,6 +40,7 @@ export const catalogData: CatalogItemType[] = [
     tags: ['Tradicional'],
     price: 9.9,
     imgUrl: americano,
+    quantity: 0,
   },
   {
     id: 3,
@@ -46,6 +49,7 @@ export const catalogData: CatalogItemType[] = [
     tags: ['Tradicional'],
     price: 9.9,
     imgUrl: cremoso,
+    quantity: 0,
   },
   {
     id: 4,
@@ -54,6 +58,7 @@ export const catalogData: CatalogItemType[] = [
     tags: ['Tradicional', 'Gelado'],
     price: 9.9,
     imgUrl: gelado,
+    quantity: 0,
   },
   {
     id: 5,
@@ -62,6 +67,7 @@ export const catalogData: CatalogItemType[] = [
     tags: ['Tradicional', 'Com Leite'],
     price: 9.9,
     imgUrl: cafeComLeite,
+    quantity: 0,
   },
   {
     id: 6,
@@ -71,6 +77,7 @@ export const catalogData: CatalogItemType[] = [
     tags: ['Tradicional', 'Com leite'],
     price: 9.9,
     imgUrl: latte,
+    quantity: 0,
   },
   {
     id: 7,
@@ -80,6 +87,7 @@ export const catalogData: CatalogItemType[] = [
     tags: ['Tradicional', 'Com leite'],
     price: 9.9,
     imgUrl: capuccino,
+    quantity: 0,
   },
   {
     id: 8,
@@ -89,6 +97,7 @@ export const catalogData: CatalogItemType[] = [
     tags: ['Tradicional', 'Com leite'],
     price: 9.9,
     imgUrl: macchiato,
+    quantity: 0,
   },
   {
     id: 9,
@@ -97,6 +106,7 @@ export const catalogData: CatalogItemType[] = [
     tags: ['Tradicional', 'Com leite'],
     price: 9.9,
     imgUrl: mocaccino,
+    quantity: 0,
   },
   {
     id: 10,
@@ -105,6 +115,7 @@ export const catalogData: CatalogItemType[] = [
     tags: ['Especial', 'Com leite'],
     price: 9.9,
     imgUrl: chocolateQuente,
+    quantity: 0,
   },
   {
     id: 11,
@@ -114,6 +125,7 @@ export const catalogData: CatalogItemType[] = [
     tags: ['Especial', 'Gelado', 'Alcoólico'],
     price: 9.9,
     imgUrl: cubano,
+    quantity: 0,
   },
   {
     id: 12,
@@ -122,6 +134,7 @@ export const catalogData: CatalogItemType[] = [
     tags: ['Especial'],
     price: 9.9,
     imgUrl: havaiano,
+    quantity: 0,
   },
   {
     id: 13,
@@ -130,6 +143,7 @@ export const catalogData: CatalogItemType[] = [
     tags: ['Especial'],
     price: 9.9,
     imgUrl: arabe,
+    quantity: 0,
   },
   {
     id: 14,
@@ -138,5 +152,6 @@ export const catalogData: CatalogItemType[] = [
     tags: ['Especial', 'Alcoólico'],
     price: 9.9,
     imgUrl: irlandes,
+    quantity: 0,
   },
 ]
