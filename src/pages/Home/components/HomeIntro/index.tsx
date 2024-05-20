@@ -6,6 +6,7 @@ import {
   TitleContainer,
 } from './styles'
 import coffeeCup from '../../../../assets/coffee-cup.svg'
+import { CircleWithIcon } from '../../../../components/CircleWithIcon'
 
 export function HomeIntro() {
   return (
@@ -17,28 +18,28 @@ export function HomeIntro() {
           hora
         </p>
         <BenefitsContainer>
-          <BenefitItemContainer iconBackgroundColor="yellow-dark">
-            <span>
+          <BenefitItemContainer>
+            <CircleWithIcon circleColor="yellow-dark">
               <ShoppingCart size={16} weight="fill" />
-            </span>
+            </CircleWithIcon>
             <p>Compra simples e segura</p>
           </BenefitItemContainer>
-          <BenefitItemContainer iconBackgroundColor="base-text">
-            <span>
+          <BenefitItemContainer>
+            <CircleWithIcon circleColor="base-text">
               <Package size={16} weight="fill" />
-            </span>
+            </CircleWithIcon>
             <p>Embalagem mantém o café intacto</p>
           </BenefitItemContainer>
-          <BenefitItemContainer iconBackgroundColor="yellow">
-            <span>
+          <BenefitItemContainer>
+            <CircleWithIcon circleColor="yellow">
               <Timer size={16} weight="fill" />
-            </span>
+            </CircleWithIcon>
             <p>Entrega rápida e rastreada</p>
           </BenefitItemContainer>
-          <BenefitItemContainer iconBackgroundColor="purple">
-            <span>
+          <BenefitItemContainer>
+            <CircleWithIcon circleColor="purple">
               <Coffee size={16} weight="fill" />
-            </span>
+            </CircleWithIcon>
             <p>O café chega fresquinho até você</p>
           </BenefitItemContainer>
         </BenefitsContainer>

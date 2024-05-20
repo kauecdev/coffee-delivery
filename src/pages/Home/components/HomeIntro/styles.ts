@@ -1,6 +1,4 @@
-import { ComponentProps } from 'react'
 import styled from 'styled-components'
-import { defaultTheme } from '../../../../styles/themes/default'
 
 export const HomeIntroContainer = styled.section`
   display: flex;
@@ -34,24 +32,10 @@ export const BenefitsContainer = styled.div`
   margin-top: 4.125rem;
 `
 
-interface BenefitItemContainerProps extends ComponentProps<'div'> {
-  iconBackgroundColor: keyof typeof defaultTheme
-}
-
-export const BenefitItemContainer = styled.div<BenefitItemContainerProps>`
+export const BenefitItemContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 0.75rem;
-
-  span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5rem;
-    border-radius: 999px;
-    background-color: ${(props) => props.theme[props.iconBackgroundColor]};
-    color: ${(props) => props.theme.background};
-  }
 
   p {
     font-size: 1rem;
