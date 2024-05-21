@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { defaultTheme } from '../../styles/themes/default'
 
 interface CircleWithIconContainerProps extends ComponentProps<'div'> {
-  iconBackgroundColor: keyof typeof defaultTheme
+  $iconBackgroundColor: keyof typeof defaultTheme
 }
 
 export const CircleWithIconContainer = styled.span<CircleWithIconContainerProps>`
@@ -12,6 +12,6 @@ export const CircleWithIconContainer = styled.span<CircleWithIconContainerProps>
   justify-content: center;
   padding: 0.5rem;
   border-radius: 999px;
-  background-color: ${(props) => props.theme[props.iconBackgroundColor]};
+  background-color: ${(props) => props.theme[props.$iconBackgroundColor]};
   color: ${(props) => props.theme.background};
 `

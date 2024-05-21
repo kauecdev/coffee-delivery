@@ -9,7 +9,7 @@ interface CircleWithIconProps {
 
 export function CircleWithIcon({ circleColor, children }: CircleWithIconProps) {
   return (
-    <CircleWithIconContainer iconBackgroundColor={circleColor}>
+    <CircleWithIconContainer $iconBackgroundColor={circleColor}>
       {children}
     </CircleWithIconContainer>
   )

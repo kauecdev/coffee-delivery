@@ -18,7 +18,7 @@ export const FormSection = styled.div`
 `
 
 interface FormHeaderProps extends ComponentProps<'header'> {
-  iconColor: keyof typeof defaultTheme
+  $iconColor: keyof typeof defaultTheme
 }
 
 export const FormHeader = styled.header<FormHeaderProps>`
@@ -26,7 +26,7 @@ export const FormHeader = styled.header<FormHeaderProps>`
   gap: 0.5rem;
 
   > svg {
-    color: ${(props) => props.theme[props.iconColor]};
+    color: ${(props) => props.theme[props.$iconColor]};
   }
 
   div p:first-of-type {

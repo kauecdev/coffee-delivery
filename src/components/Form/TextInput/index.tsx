@@ -12,12 +12,24 @@ type gridAreaType =
 
 interface TextInputProps extends ComponentProps<'input'> {
   gridArea: gridAreaType
+  mRef?: React.Ref<HTMLInputElement> | null
+  isInvalid?: boolean
 }
 
-export function TextInput({ gridArea, required, ...props }: TextInputProps) {
+export function TextInput({
+  gridArea,
+  isInvalid = false,
+  required,
+  mRef,
+  ...props
+}: TextInputProps) {
   return (
-    <CustomInputContainer style={{ gridArea }} aria-required={required}>
-      <input {...props} />
+    <CustomInputContainer
+      data-invalid={isInvalid}
+      style={{ gridArea }}
+      aria-required={required}
+    >
+      <input ref={mRef} {...props} />
     </CustomInputContainer>
   )
 }

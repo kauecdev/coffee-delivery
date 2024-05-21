@@ -2,8 +2,23 @@ import { CurrencyDollar, MapPin, Timer } from '@phosphor-icons/react'
 import motoby from '../../assets/motoboy.svg'
 import { CircleWithIcon } from '../../components/CircleWithIcon'
 import { CheckoutSuccessContainer, DeliveryDetailsContainer } from './styles'
+import { useContext } from 'react'
+import { CartContext } from '../../contexts/CartContext'
+import { useParams } from 'react-router-dom'
+
+const PaymentMethodLabel = {
+  CREDIT_CARD: 'Cartão de Crédito',
+  DEBIT_CARD: 'Cartão de Débito',
+  MONEY: 'Dinheiro',
+}
 
 export function CheckoutSuccess() {
+  const { orders } = useContext(CartContext)
+
+  const { id } = useParams()
+
+  const currentOrder = orders.find((order) => String(order.id) === id)
+
   return (
     <CheckoutSuccessContainer>
       <div>
@@ -16,9 +31,15 @@ export function CheckoutSuccess() {
             </CircleWithIcon>
             <div>
               <p>
-                Entrega em <strong>Rua João XXVIII, 1132</strong>
+                Entrega em{' '}
+                <strong>
+                  {currentOrder?.street}, {currentOrder?.number}
+                </strong>
               </p>
-              <p>Jockey - Teresina, PI</p>
+              <p>
+                {currentOrder?.neighborhood} - {currentOrder?.city},{' '}
+                {currentOrder?.state}
+              </p>
             </div>
           </div>
 
@@ -41,7 +62,10 @@ export function CheckoutSuccess() {
             <div>
               <p>Pagamento na entrega</p>
               <p>
-                <strong>Cartão de Crédito</strong>
+                <strong>
+                  {currentOrder &&
+                    PaymentMethodLabel[currentOrder?.paymentMethod]}
+                </strong>
               </p>
             </div>
           </div>

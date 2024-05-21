@@ -35,4 +35,8 @@ export const CustomInputContainer = styled.div`
     position: absolute;
     right: 0.75rem;
   }
+
+  &[data-invalid='true'] {
+    border: 1px solid ${(props) => props.theme.danger};
+  }
 `

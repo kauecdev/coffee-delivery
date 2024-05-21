@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { QuantityInput } from '../../../../components/Form/QuantityInput'
 import { CatalogItemType } from '../../../../data/catalog'
 import {
@@ -11,12 +11,15 @@ import {
   TagsContainer,
 } from './styles'
 import { ShoppingCartSimple } from '@phosphor-icons/react'
+import { CartContext } from '../../../../contexts/CartContext'
 
 interface CatalogItemProps {
   catalogItem: CatalogItemType
 }
 
 export function CatalogItem({ catalogItem }: CatalogItemProps) {
+  const { addItem } = useContext(CartContext)
+
   const [quantity, setQuantity] = useState(1)
 
   function handleDecrementQuantity() {
@@ -27,6 +30,11 @@ export function CatalogItem({ catalogItem }: CatalogItemProps) {
 
   function handleIncrementQuantity() {
     setQuantity((currentQuantity) => currentQuantity + 1)
+  }
+
+  function handleAddItemsToCart() {
+    addItem({ ...catalogItem, quantity })
+    setQuantity(1)
   }
 
   return (
@@ -49,7 +57,7 @@ export function CatalogItem({ catalogItem }: CatalogItemProps) {
             decrementQuantity={handleDecrementQuantity}
             incrementQuantity={handleIncrementQuantity}
           />
-          <AddToCartButton onClick={() => null}>
+          <AddToCartButton onClick={handleAddItemsToCart}>
             <ShoppingCartSimple size={22} weight="fill" />
           </AddToCartButton>
         </CatalogItemActionsContainer>

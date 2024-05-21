@@ -1,28 +1,59 @@
+import { useContext } from 'react'
 import { PrimaryButton } from '../../../../components/PrimaryButton'
-import { CatalogItemType, catalogData } from '../../../../data/catalog'
 import { CoffeeSelectedCard } from '../CoffeeSelectedCard'
 import { ConfirmOrderPanelContainer, PriceDetailsSection } from './styles'
+import { CartContext } from '../../../../contexts/CartContext'
 
 export function ConfirmOrderPanel() {
-  const coffees: CatalogItemType[] = catalogData.filter((item) => item.id === 1)
+  const { cart } = useContext(CartContext)
+
+  const deliveryTax = 3.5
+
+  const totalItemsPrice = cart.reduce(
+    (previousValue, currentItem) =>
+      (previousValue += currentItem.price * currentItem.quantity),
+    0,
+  )
+
+  const totalPrice = deliveryTax + totalItemsPrice
 
   return (
     <ConfirmOrderPanelContainer>
-      {coffees.map((coffee) => (
+      {cart.map((coffee) => (
         <CoffeeSelectedCard key={coffee.id} coffee={coffee} />
       ))}
       <PriceDetailsSection>
         <span>
-          Total de itens <aside>R$ 29,70</aside>
+          Total de itens{' '}
+          <aside>
+            {totalItemsPrice.toLocaleString('pt-br', {
+              style: 'currency',
+              currency: 'BRL',
+            })}
+          </aside>
         </span>
         <span>
-          Entrega <aside>R$ 3,50</aside>
+          Entrega{' '}
+          <aside>
+            {deliveryTax.toLocaleString('pt-br', {
+              style: 'currency',
+              currency: 'BRL',
+            })}
+          </aside>
         </span>
         <span>
-          Total <aside>R$ 33,20</aside>
+          Total{' '}
+          <aside>
+            {totalPrice.toLocaleString('pt-br', {
+              style: 'currency',
+              currency: 'BRL',
+            })}
+          </aside>
         </span>
       </PriceDetailsSection>
-      <PrimaryButton>Confirmar Pedido</PrimaryButton>
+      <PrimaryButton type="submit" form="order">
+        Confirmar Pedido
+      </PrimaryButton>
     </ConfirmOrderPanelContainer>
   )
 }

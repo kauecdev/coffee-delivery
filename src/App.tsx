@@ -3,12 +3,17 @@ import { GlobalStyle } from './styles/global'
 import { defaultTheme } from './styles/themes/default'
 import { BrowserRouter } from 'react-router-dom'
 import { Router } from './Router'
+import { CartContextProvider } from './contexts/CartContext'
+import { Toaster } from 'react-hot-toast'
 
 export function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <BrowserRouter>
-        <Router />
+        <CartContextProvider>
+          <Router />
+        </CartContextProvider>
+        <Toaster position="top-right" reverseOrder={false} />
       </BrowserRouter>
       <GlobalStyle />
     </ThemeProvider>

@@ -48,10 +48,14 @@ export const ChartLink = styled(NavLink)`
   span {
     background-color: ${(props) => props.theme['yellow-dark']};
     color: ${(props) => props.theme.white};
-    padding: 0.175rem 0.4145rem;
+    width: 1.25rem;
+    height: 1.25rem;
     border-radius: 999px;
     font-size: 0.75rem;
-    text-align: center;
+    line-height: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     position: absolute;
     top: calc(-45% + 0.5rem);
