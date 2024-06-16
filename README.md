@@ -29,7 +29,6 @@ OBS: Para executar a aplicação na sua máquina você irá precisar ter instala
 1. Baixe ou clone o projeto.
 2. Instale as dependências usando o comando `npm install` ou `npm i` no diretório do projeto.
 3. Use o comando `npm run dev` para inicar a aplicação.
-4. Divirta-se criado suas próprias tarefas!
 
 ## Screenshots
 
